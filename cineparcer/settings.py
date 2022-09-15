@@ -20,6 +20,7 @@ USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Ge
 ROBOTSTXT_OBEY = False
 LOG_ENABLED = True
 LOG_LEVEL = 'DEBUG'
+IMAGES_STORE = 'images'
 # LOG_FILE = 'cineparcer_log.txt'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
@@ -34,7 +35,7 @@ DOWNLOAD_DELAY = 3
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -66,8 +67,9 @@ DOWNLOAD_DELAY = 3
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'cineparcer.pipelines.CineparcerPipeline': 300,
-#    'cineparcer.pipelines.CineparcerItemEditor': 200,
+    'cineparcer.pipelines.CineparcerPipeline': 300,
+    'cineparcer.pipelines.CinepacerPhotoPipeline': 100
+   #'cineparcer.pipelines.CineparcerItemEditor': 200,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
