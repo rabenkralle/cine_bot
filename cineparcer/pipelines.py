@@ -44,3 +44,12 @@ class CinepacerPhotoPipeline(ImagesPipeline):
         media_guid = hashlib.sha1(to_bytes(url)).hexdigest()       #Формируем название файла фотографии
         media_ext = os.path.splitext(url)[1]
         return f'full/{name}/%s%s' % (media_guid, media_ext)
+
+
+class CineparcerItemEditor:
+    def process_item(self, item, spider):
+        if spider.name == 'cinemapark':
+            item['movie_title'] = ' '.join(item['movie_title'].split())
+
+        # if spider.name == 'mirageruspb':
+        #     item['photo'] = item['photo'].split('?')[0]
