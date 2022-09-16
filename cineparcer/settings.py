@@ -69,7 +69,7 @@ COOKIES_ENABLED = True
 ITEM_PIPELINES = {
     'cineparcer.pipelines.CineparcerPipeline': 300,
     'cineparcer.pipelines.CinepacerPhotoPipeline': 100,
-    'cineparcer.pipelines.CineparcerItemEditor': 200
+    # 'cineparcer.pipelines.CineparcerItemEditor': 200
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
